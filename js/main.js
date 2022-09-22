@@ -57,18 +57,16 @@ class Overlord extends Villain {
   constructor() {
     super();
     this.name = "Overlord";
-    this.attacks = [{ bite: 10 }, { grab: 5 }, { shoot: 20 }];
+    this.attacks = [{ bite: 5 }, { grab: 20 }, { shoot: 10 }];
   }
 }
 class Skinner extends Villain {
   constructor() {
     super();
     this.name = "Skinner";
-    this.attacks = [{ bite: 10 }, { grab: 5 }, { shoot: 20 }];
+    this.attacks = [{ bite: 20 }, { grab: 10 }, { shoot: 5 }];
   }
 }
-
-// const hunter = new Hunter();
 
 class Game {
   constructor() {
@@ -91,8 +89,22 @@ class Game {
 
     console.log(this.hero);
   }
+
+  getActiveVillain() {
+    const villainOptions = [new Fallen(), new Overlord(), new Skinner()];
+    console.log(villainOptions);
+
+    const random = Math.floor(Math.random() * villainOptions.length);
+    console.log(random);
+    this.villain = villainOptions[random];
+
+    console.log(this.villain);
+  }
 }
 
 const game = new Game();
 
-startBtn.addEventListener("click", () => game.getActiveHero());
+startBtn.addEventListener("click", () => {
+  game.getActiveHero();
+  game.getActiveVillain();
+});
