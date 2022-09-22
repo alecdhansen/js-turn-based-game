@@ -77,8 +77,7 @@ class Game {
   }
 
   getActiveHero() {
-    let characterOutput =
-      selectCharacter.options[selectCharacter.selectedIndex].value;
+    let characterOutput = selectCharacter.options[selectCharacter.selectedIndex].value;
     console.log(characterOutput);
 
     if (characterOutput === "Hunter") {
@@ -91,8 +90,20 @@ class Game {
 
     console.log(this.hero);
   }
+
+  attack() {
+    console.log(this.hero.attacks[0]);
+  }
 }
 
 const game = new Game();
 
-startBtn.addEventListener("click", () => game.getActiveHero());
+startBtn.addEventListener("click", () => {
+  game.getActiveHero();
+});
+
+const attackBtn = document.querySelector(".attack-button1");
+
+attackBtn.addEventListener("click", () => {
+  game.attack();
+});
