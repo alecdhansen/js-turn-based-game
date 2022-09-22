@@ -57,14 +57,14 @@ class Overlord extends Villain {
   constructor() {
     super();
     this.name = "Overlord";
-    this.attacks = [{ bite: 10 }, { grab: 5 }, { shoot: 20 }];
+    this.attacks = [{ bite: 5 }, { grab: 20 }, { shoot: 10 }];
   }
 }
 class Skinner extends Villain {
   constructor() {
     super();
     this.name = "Skinner";
-    this.attacks = [{ bite: 10 }, { grab: 5 }, { shoot: 20 }];
+    this.attacks = [{ bite: 20 }, { grab: 10 }, { shoot: 5 }];
   }
 }
 
@@ -77,7 +77,8 @@ class Game {
   }
 
   getActiveHero() {
-    let characterOutput = selectCharacter.options[selectCharacter.selectedIndex].value;
+    let characterOutput =
+      selectCharacter.options[selectCharacter.selectedIndex].value;
     console.log(characterOutput);
 
     if (characterOutput === "Hunter") {
