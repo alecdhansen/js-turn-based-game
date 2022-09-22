@@ -1,3 +1,6 @@
+const selectCharacter = document.querySelector(".character");
+const startBtn = document.querySelector(".start-btn");
+
 class Character {
   constructor(name) {
     this.name = name;
@@ -60,20 +63,9 @@ class Game {
   }
 
   getActiveHero() {
-    let characterOutput = selectCharacter.options[selectCharacter.selectedIndex].value;
+    let characterOutput =
+      selectCharacter.options[selectCharacter.selectedIndex].value;
     console.log(characterOutput);
-
-    // switch (charCase) {
-    //   case "Hunter":
-    //     this.hero = new Hunter();
-    //     break;
-    //   case "Titan":
-    //     this.hero = new Titan();
-    //     break;
-    //   case "Warlock":
-    //     this.hero = new Warlock();
-    //     break;
-    // }
 
     if (characterOutput === "Hunter") {
       this.hero = new Hunter();
@@ -89,4 +81,4 @@ class Game {
 
 const game = new Game();
 
-const selectCharacter = document.querySelector(".character");
+startBtn.addEventListener("click", () => game.getActiveHero());
