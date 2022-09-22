@@ -68,8 +68,6 @@ class Skinner extends Villain {
   }
 }
 
-// const hunter = new Hunter();
-
 class Game {
   constructor() {
     this.hero = [];
@@ -92,8 +90,15 @@ class Game {
     console.log(this.hero);
   }
 
-  attack() {
-    console.log(this.hero.attacks[0]);
+  getActiveVillain() {
+    const villainOptions = [new Fallen(), new Overlord(), new Skinner()];
+    console.log(villainOptions);
+
+    const random = Math.floor(Math.random() * villainOptions.length);
+    console.log(random);
+    this.villain = villainOptions[random];
+
+    console.log(this.villain);
   }
 }
 
@@ -101,10 +106,5 @@ const game = new Game();
 
 startBtn.addEventListener("click", () => {
   game.getActiveHero();
-});
-
-const attackBtn = document.querySelector(".attack-button1");
-
-attackBtn.addEventListener("click", () => {
-  game.attack();
+  game.getActiveVillain();
 });
