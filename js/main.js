@@ -15,7 +15,7 @@ class Hero extends Character {
   }
 }
 
-class Villian extends Character {
+class Villain extends Character {
   constructor(name) {
     super();
     this.name = name;
@@ -46,10 +46,24 @@ class Warlock extends Hero {
   }
 }
 
-class Fallen extends Villian {
+class Fallen extends Villain {
   constructor() {
     super();
     this.name = "Fallen";
+    this.attacks = [{ bite: 10 }, { grab: 5 }, { shoot: 20 }];
+  }
+}
+class Overlord extends Villain {
+  constructor() {
+    super();
+    this.name = "Overlord";
+    this.attacks = [{ bite: 10 }, { grab: 5 }, { shoot: 20 }];
+  }
+}
+class Skinner extends Villain {
+  constructor() {
+    super();
+    this.name = "Skinner";
     this.attacks = [{ bite: 10 }, { grab: 5 }, { shoot: 20 }];
   }
 }
@@ -59,7 +73,7 @@ class Fallen extends Villian {
 class Game {
   constructor() {
     this.hero = [];
-    this.villian = [];
+    this.villain = [];
   }
 
   getActiveHero() {
