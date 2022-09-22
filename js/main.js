@@ -51,4 +51,42 @@ class Fallen extends Villian {
   }
 }
 
-const hunter = new Hunter();
+// const hunter = new Hunter();
+
+class Game {
+  constructor() {
+    this.hero = [];
+    this.villian = [];
+  }
+
+  getActiveHero() {
+    let characterOutput = selectCharacter.options[selectCharacter.selectedIndex].value;
+    console.log(characterOutput);
+
+    // switch (charCase) {
+    //   case "Hunter":
+    //     this.hero = new Hunter();
+    //     break;
+    //   case "Titan":
+    //     this.hero = new Titan();
+    //     break;
+    //   case "Warlock":
+    //     this.hero = new Warlock();
+    //     break;
+    // }
+
+    if (characterOutput === "Hunter") {
+      this.hero = new Hunter();
+    } else if (characterOutput === "Titan") {
+      this.hero = new Titan();
+    } else if (characterOutput === "Warlock") {
+      this.hero = new Warlock();
+    }
+
+    console.log(this.hero);
+  }
+}
+
+const game = new Game();
+
+const selectCharacter = document.querySelector(".character");
