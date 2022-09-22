@@ -53,6 +53,20 @@ class Fallen extends Villain {
     this.attacks = [{ bite: 10 }, { grab: 5 }, { shoot: 20 }];
   }
 }
+class Overlord extends Villain {
+  constructor() {
+    super();
+    this.name = "Overlord";
+    this.attacks = [{ bite: 10 }, { grab: 5 }, { shoot: 20 }];
+  }
+}
+class Skinner extends Villain {
+  constructor() {
+    super();
+    this.name = "Skinner";
+    this.attacks = [{ bite: 10 }, { grab: 5 }, { shoot: 20 }];
+  }
+}
 
 // const hunter = new Hunter();
 
