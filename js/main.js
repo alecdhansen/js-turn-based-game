@@ -145,3 +145,8 @@ attackBtns.forEach((attackBtn) => {
     game.pairAttackValue(value);
   });
 });
+ 
+function Media ({myAudio} = {}) {
+  this.myAudio = myAudio; 
+  console.log(myAudio)
+}
