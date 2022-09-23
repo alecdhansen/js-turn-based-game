@@ -8,36 +8,47 @@
     <title>Turn Based Game</title>
   </head>
   <body>
-    <input type="text" class="hero-text" disabled />
-    <input type="text" class="villain-text" disabled />
 
-    <div class="hero">
-      <select class="character">
-        <option>-- please select character --</option>
-        <option value="Superman">Superman</option>
-        <option value="Captain Crunch">Captain Crunch</option>
-        <option value="Elastigirl">Elastigirl</option>
-        <option value="Spiderman">Spiderman</option>
-        <option value="Tarzan">Tarzan</option>
-      </select>
-      <button class="start-btn">Start Game!</button>
-      <div class="heroPower"></div>
-    </div>
-    <div class="actions">
-      <ul>
-        <li><button class="attack-button" value="punch">Punch</button></li>
-        <li>
-          <button class="attack-button" value="spoon-smack">Spoon Smack</button>
-        </li>
-        <li><button class="attack-button" value="slap">Slap</button></li>
-        <li>
-          <button class="attack-button" value="web-shot">Web Shot</button>
-        </li>
-        <li><button class="attack-button" value="tickle">Tickle</button></li>
-      </ul>
-    </div>
-    <div class="villain"></div>
-    <div class="heroPower"></div>
+    <main>
+      <article class="game-pad">
+        <header class="game-options">
+          <select class="character">
+            <option>-- please select character --</option>
+            <option value="Superman">Superman</option>
+            <option value="Captain Crunch">Captain Crunch</option>
+            <option value="Elastigirl">Elastigirl</option>
+            <option value="Spiderman">Spiderman</option>
+            <option value="Tarzan">Tarzan</option>
+          </select>
+          <button class="start-btn">Start Game!</button>
+        </header>
+        <section class="game-screen">
+          <img src="../js-turn-based-game/images/stadium.png" alt="">
+          <input type="text" class="hero-text" disabled />
+          <input type="text" class="villain-text" disabled />
+          <div class="heroPower"></div>
+          <div class="villainPower"></div>
+          <div class="players">
+            <img class="hero-img" src="../js-turn-based-game/images/captain-crunch.png" alt="">
+            <img class="villain-img" src="../js-turn-based-game/images/darth-vader.png" alt="">
+          </div>
+        </section>
+        <section class="actions">
+          <ul>
+            <li><button class="attack-button" value="punch">Punch</button></li>
+            <li>
+              <button class="attack-button" value="spoon smack">Spoon Smack</button>
+            </li>
+            <li><button class="attack-button" value="slap">Slap</button></li>
+            <li>
+              <button class="attack-button" value="web-shot">Web Shot</button>
+            </li>
+            <li><button class="attack-button" value="tickle">Tickle</button></li>
+          </ul>
+        </section>
+      </article>
+    </main>
+
     <audio
       class="media"
       controls
@@ -52,8 +63,6 @@
       Music promoted by https://www.chosic.com/free-music/all/
       Creative Commons CC BY 3.0
       https://creativecommons.org/licenses/by/3.0/ -->
-    =======
-    <div class="villainPower"></div>
     <script src="./js/main.js"></script>
   </body>
 </html>

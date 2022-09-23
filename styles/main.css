@@ -14,19 +14,126 @@ ul {
   list-style: none;
 }
 
-.heroPower {
-  width: 50px;
-  height: 20px;
-  background-color: green;
+audio {
+  display: none;
 }
 
-.villainPower {
-  width: 50px;
-  height: 20px;
-  background-color: red;
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.game-pad {
+  width: 1000px;
+  height: 650px;
+  background-color: #A5A4A4;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 5%;
+  border: 10px solid #848282;
+}
+
+.game-options {
+  padding: 20px 0;
+}
+
+.game-screen {
+  width: 80%;
+  height: 450px;
+  position: relative;
+}
+.game-screen > img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5%;
+  border: 5px solid #000;
 }
 
 .hero-text,
 .villain-text {
-  width: 400px;
+  width: 300px;
+  height: 50px;
+  border-radius: 10px;
+}
+
+.hero-text {
+  display: block;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.villain-text {
+  display: block;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  text-align: right;
+  
+}
+
+.heroPower {
+  width: 250px;
+  height: 20px;
+  background: linear-gradient(45deg, #f62d2d, #f7b538);
+  position: absolute;
+  top: 61px;
+  left: 10px;
+  border-radius: 10px;
+}
+
+.villainPower {
+  width: 250px;
+  height: 20px;
+  background: linear-gradient(45deg,#f7b538, #f62d2d);
+  position: absolute;
+  top: 61px;
+  right: 10px;
+  border-radius: 10px;
+}
+
+.players {
+  position: absolute;
+  top: 120px;
+  width: 100%;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.players > img {
+  width: 200px;
+  height: auto;
+}
+
+.actions {
+  width: 80%;
+}
+
+.actions > ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 100px;
+}
+
+.actions > ul > li {
+  width: 200px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.actions > ul > li > button {
+  display: block;
+  width: 90%;
+  height: 50%;
+  border-radius: 10px;
+  text-transform: uppercase;
 }
