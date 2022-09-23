@@ -1,6 +1,7 @@
 const selectCharacter = document.querySelector(".character");
 const startBtn = document.querySelector(".start-btn");
 const attackBtns = document.querySelectorAll(".attack-button");
+let gameOver= false;
 
 class Character {
   constructor(name) {
@@ -133,7 +134,7 @@ class Game {
   constructor() {
     this.hero = [];
     this.villain = [];
-    this.gameOver = false;
+    // this.gameOver= false;
   }
 
   getActiveHero() {
@@ -170,6 +171,10 @@ class Game {
     let chosenAttack = this.hero.attacks.find(
       ({ attack }) => attack === `${btnValue}`
     );
+    if( this.villain.health <= 0 || gameOver){
+      gameOver = true;
+      return;
+    }
     console.log(chosenAttack.value, "hero attack");
     this.villain.health -= chosenAttack.value;
     document.querySelector(".villainPower").innerHTML = this.villain.health;
@@ -179,6 +184,10 @@ class Game {
     }
 
     setTimeout(() => {
+      if( this.hero.health <= 0 || gameOver){
+        gameOver = true;
+        return
+      }
       const random = Math.floor(Math.random() * this.villain.attacks.length);
       let villainAttackValue = this.villain.attacks[random].value;
       console.log(villainAttackValue, "villain attack");
@@ -197,6 +206,7 @@ class Game {
 const game = new Game();
 
 startBtn.addEventListener("click", () => {
+  gameOver= false;
   game.getActiveHero();
   game.getActiveVillain();
 });
