@@ -108,9 +108,9 @@ class Darthvader extends Villain {
     super();
     this.name = "Darth Vader";
     this.attacks = [
-      { attack: "force-choke", value: 15 },
-      { attack: "slash", value: 10 },
-      { attack: "magic", value: 5 },
+      { attack: "force choke", value: 15 },
+      { attack: "laugh", value: 10 },
+      { attack: "fire ball", value: 5 },
     ];
   }
 }
@@ -120,9 +120,9 @@ class Thejoker extends Villain {
     super();
     this.name = "The Joker";
     this.attacks = [
-      { attack: "force-choke", value: 5 },
+      { attack: "force choke", value: 5 },
       { attack: "laugh", value: 15 },
-      { attack: "magic", value: 10 },
+      { attack: "fire ball", value: 10 },
     ];
   }
 }
@@ -132,9 +132,9 @@ class Bowser extends Villain {
     super();
     this.name = "Bowser";
     this.attacks = [
-      { attack: "force-choke", value: 10 },
+      { attack: "force choke", value: 10 },
       { attack: "laugh", value: 5 },
-      { attack: "breath-of-fire", value: 15 },
+      { attack: "fire ball", value: 15 },
     ];
   }
 }
