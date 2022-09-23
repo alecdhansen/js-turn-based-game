@@ -102,7 +102,8 @@ class Game {
   }
 
   getActiveHero() {
-    let characterOutput = selectCharacter.options[selectCharacter.selectedIndex].value;
+    let characterOutput =
+      selectCharacter.options[selectCharacter.selectedIndex].value;
     console.log(characterOutput);
 
     if (characterOutput === "Hunter") {
@@ -128,17 +129,19 @@ class Game {
   }
 
   pairAttackValue(btnValue) {
-    let chosenAttack = this.hero.attacks.find(({ attack }) => attack === `${btnValue}`);
-    console.log(chosenAttack.value);
+    let chosenAttack = this.hero.attacks.find(
+      ({ attack }) => attack === `${btnValue}`
+    );
+    console.log(chosenAttack.value, "hero attack");
     this.villain.health -= chosenAttack.value;
-    console.log(this.villain.health, "v");
+    console.log(this.villain.health, "villain health");
 
     setTimeout(() => {
       const random = Math.floor(Math.random() * this.villain.attacks.length);
       let villainAttackValue = this.villain.attacks[random].value;
-      console.log(villainAttackValue);
+      console.log(villainAttackValue, "villain attack");
       this.hero.health -= villainAttackValue;
-      console.log(this.hero.health, "h");
+      console.log(this.hero.health, "hero health");
     }, 5000);
   }
 }
