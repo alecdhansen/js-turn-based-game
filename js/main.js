@@ -51,21 +51,23 @@ class Fallen extends Villain {
   constructor() {
     super();
     this.name = "Fallen";
-    this.attacks = [{ bite: 10 }, { grab: 5 }, { shoot: 20 }];
+    this.attacks = [{ punch: 10 }, { slash: 5 }, { magic: 20 }];
   }
 }
+
 class Overlord extends Villain {
   constructor() {
     super();
     this.name = "Overlord";
-    this.attacks = [{ bite: 5 }, { grab: 20 }, { shoot: 10 }];
+    this.attacks = [{ punch: 10 }, { slash: 5 }, { magic: 20 }];
   }
 }
+
 class Skinner extends Villain {
   constructor() {
     super();
     this.name = "Skinner";
-    this.attacks = [{ bite: 20 }, { grab: 10 }, { shoot: 5 }];
+    this.attacks = [{ punch: 10 }, { slash: 5 }, { magic: 20 }];
   }
 }
 
@@ -76,8 +78,7 @@ class Game {
   }
 
   getActiveHero() {
-    let characterOutput =
-      selectCharacter.options[selectCharacter.selectedIndex].value;
+    let characterOutput = selectCharacter.options[selectCharacter.selectedIndex].value;
     console.log(characterOutput);
 
     if (characterOutput === "Hunter") {
