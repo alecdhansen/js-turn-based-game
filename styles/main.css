@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Dangrek&family=Press+Start+2P&family=Silkscreen&display=swap');
+
 html {
   box-sizing: border-box;
 }
@@ -23,6 +25,8 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
+  background-image: url(../images/bg2.jpeg);
+  background-size: cover;
 }
 
 .game-pad {
@@ -32,12 +36,27 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
-  border-radius: 5%;
+  border-radius: 50px;
   border: 10px solid #848282;
+  box-shadow: 10px 10px 20px #000;
+
 }
 
 .game-options {
   padding: 20px 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.start-btn, .character {
+  display: block;
+  width: 30%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid #444444;
+  background-color: #848282;
 }
 
 .game-screen {
@@ -45,11 +64,11 @@ body {
   height: 450px;
   position: relative;
 }
-.game-screen > img {
+.game-screen > .screen-img {
   width: 100%;
   height: auto;
   object-fit: cover;
-  border-radius: 5%;
+  border-radius: 30px;
   border: 5px solid #000;
 }
 
@@ -57,7 +76,12 @@ body {
 .villain-text {
   width: 300px;
   height: 50px;
-  border-radius: 10px;
+  border-radius: 20px;
+  font-family: "Press Start 2P", Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  text-align: center;
+  color: #73fa34;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .hero-text {
@@ -71,9 +95,30 @@ body {
   display: block;
   position: absolute;
   top: 10px;
-  right: 10px;
-  text-align: right;
-  
+  right: 10px;  
+}
+
+.vs-logo {
+  position: absolute;
+  width: 10%;
+  height: 50px;
+  top: 10px;
+  left: 45%;
+}
+
+.action-text {
+  display: block;
+  position: absolute;
+  width: 90%;
+  height: 50px;
+  top: 85px;
+  left: 5%;
+  border-radius: 20px;
+  font-family: "Press Start 2P", Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  text-align: center;
+  color: #73fa34;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .heroPower {
@@ -134,6 +179,27 @@ body {
   display: block;
   width: 90%;
   height: 50%;
-  border-radius: 10px;
+  border-radius: 30px;
   text-transform: uppercase;
+}
+
+.actions > ul > li:nth-child(1) > button {
+  background-color: #a07cfb;
+  border: 5px solid #6a51aa;
+}
+.actions > ul > li:nth-child(2) > button {
+  background-color: #4EA3EF;
+  border: 5px solid #3877ad;
+}
+.actions > ul > li:nth-child(3) > button {
+  background-color: #91DC6F;
+  border: 5px solid #65994d;
+}
+.actions > ul > li:nth-child(4) > button {
+  background-color: #F5EB60;
+  border: 5px solid #bdb549
+}
+.actions > ul > li:nth-child(5) > button {
+  background-color: #E34E45;
+  border: 5px solid #a43832;
 }

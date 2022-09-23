@@ -5,6 +5,7 @@ const villainHealth = document.querySelector(".villainPower");
 const heroHealth = document.querySelector(".heroPower");
 const heroText = document.querySelector(".hero-text");
 const villainText = document.querySelector(".villain-text");
+const actionText = document.querySelector(".action-text");
 
 let gameOver = false;
 
@@ -147,8 +148,7 @@ class Game {
   }
 
   getActiveHero() {
-    let characterOutput =
-      selectCharacter.options[selectCharacter.selectedIndex].value;
+    let characterOutput = selectCharacter.options[selectCharacter.selectedIndex].value;
     console.log(characterOutput);
 
     if (characterOutput === "Superman") {
@@ -177,13 +177,11 @@ class Game {
   }
 
   pairAttackValue(btnValue) {
-    let chosenAttack = this.hero.attacks.find(
-      ({ attack }) => attack === `${btnValue}`
-    );
+    let chosenAttack = this.hero.attacks.find(({ attack }) => attack === `${btnValue}`);
     // console.log(chosenAttack.value, "hero attack");
     this.villain.health -= chosenAttack.value;
     // console.log(this.villain.health, "villain health");
-    heroText.value = `${this.hero.name} uses ${chosenAttack.attack} and does ${chosenAttack.value} damage!`;
+    actionText.value = `${this.hero.name} uses ${chosenAttack.attack} and does ${chosenAttack.value} damage!`;
 
     if (this.villain.health <= 0 || gameOver) {
       gameOver = true;
@@ -192,50 +190,59 @@ class Game {
     game.updateVillainHealth();
 
     setTimeout(() => {
+      if (gameOver === true) {
+        return;
+      }
+
       const random = Math.floor(Math.random() * this.villain.attacks.length);
       let villainAttack = this.villain.attacks[random];
       let villainAttackValue = villainAttack.value;
       // console.log(villainAttackValue, "villain attack");
       this.hero.health -= villainAttackValue;
       // console.log(this.hero.health, "hero health");
-      villainText.value = `${this.villain.name} uses ${villainAttack.attack} and does ${villainAttackValue} damage!`;
+      actionText.value = `${this.villain.name} uses ${villainAttack.attack} and does ${villainAttackValue} damage!`;
 
       if (this.hero.health <= 0 || gameOver) {
         gameOver = true;
       }
       game.checkGameOver();
       game.updateHeroHealth();
-    }, 1000);
+    }, 3000);
   }
 
   updateHeroHealth() {
-    heroHealth.innerHTML = this.hero.health;
+    // heroHealth.innerHTML = this.hero.health;
+    heroHealth.style.width = `${(this.hero.health / 100) * 250}px`;
   }
 
   updateVillainHealth() {
-    villainHealth.innerHTML = this.villain.health;
+    // villainHealth.innerHTML = this.villain.health;
+    villainHealth.style.width = `${(this.villain.health / 100) * 250}px`;
   }
 
   checkGameOver() {
     if (!gameOver) {
       return;
     } else if (this.hero.health <= 0) {
-      heroText.value = `${this.hero.name} loses!`;
       this.hero.health = 0;
-      villainText.value = `${this.villain.name} wins!`;
+      actionText.value = `${this.villain.name} wins!`;
 
       attackBtns.forEach((attackBtn) => {
         attackBtn.disabled = true;
       });
     } else if (this.villain.health <= 0) {
-      heroText.value = `${this.hero.name} wins!`;
       this.villain.health = 0;
-      villainText.value = `${this.villain.name} loses!`;
+      actionText.value = `${this.hero.name} wins!`;
 
       attackBtns.forEach((attackBtn) => {
         attackBtn.disabled = true;
       });
     }
+  }
+
+  displayPlayerNames() {
+    heroText.value = `${this.hero.name}`;
+    villainText.value = `${this.villain.name}`;
   }
 }
 
@@ -245,14 +252,11 @@ startBtn.addEventListener("click", () => {
   gameOver = false;
   game.getActiveHero();
   game.getActiveVillain();
-  game.updateHeroHealth();
-  game.updateVillainHealth();
+  game.displayPlayerNames();
 
   attackBtns.forEach((attackBtn) => {
     attackBtn.disabled = false;
   });
-  heroText.value = "";
-  villainText.value = "";
 });
 
 attackBtns.forEach((attackBtn) => {
