@@ -27,7 +27,11 @@ class Hunter extends Hero {
   constructor() {
     super();
     this.name = "Hunter";
-    this.attacks = [{ punch: 10 }, { slash: 15 }, { magic: 10 }];
+    this.attacks = [
+      { attack: "punch", value: 10 },
+      { attack: "slash", value: 15 },
+      { attack: "magic", value: 10 },
+    ];
   }
 }
 
@@ -35,7 +39,11 @@ class Titan extends Hero {
   constructor() {
     super();
     this.name = "Titan";
-    this.attacks = [{ punch: 20 }, { slash: 10 }, { magic: 5 }];
+    this.attacks = [
+      { attack: "punch", value: 20 },
+      { attack: "slash", value: 10 },
+      { attack: "magic", value: 5 },
+    ];
   }
 }
 
@@ -43,7 +51,11 @@ class Warlock extends Hero {
   constructor() {
     super();
     this.name = "Warlock";
-    this.attacks = [{ punch: 10 }, { slash: 5 }, { magic: 20 }];
+    this.attacks = [
+      { attack: "punch", value: 10 },
+      { attack: "slash", value: 5 },
+      { attack: "magic", value: 20 },
+    ];
   }
 }
 
@@ -51,7 +63,11 @@ class Fallen extends Villain {
   constructor() {
     super();
     this.name = "Fallen";
-    this.attacks = [{ punch: 10 }, { slash: 5 }, { magic: 20 }];
+    this.attacks = [
+      { attack: "punch", value: 10 },
+      { attack: "slash", value: 15 },
+      { attack: "magic", value: 10 },
+    ];
   }
 }
 
@@ -59,7 +75,11 @@ class Overlord extends Villain {
   constructor() {
     super();
     this.name = "Overlord";
-    this.attacks = [{ punch: 10 }, { slash: 5 }, { magic: 20 }];
+    this.attacks = [
+      { attack: "punch", value: 10 },
+      { attack: "slash", value: 15 },
+      { attack: "magic", value: 10 },
+    ];
   }
 }
 
@@ -67,7 +87,11 @@ class Skinner extends Villain {
   constructor() {
     super();
     this.name = "Skinner";
-    this.attacks = [{ punch: 10 }, { slash: 5 }, { magic: 20 }];
+    this.attacks = [
+      { attack: "punch", value: 10 },
+      { attack: "slash", value: 15 },
+      { attack: "magic", value: 10 },
+    ];
   }
 }
 
@@ -78,8 +102,7 @@ class Game {
   }
 
   getActiveHero() {
-    let characterOutput =
-      selectCharacter.options[selectCharacter.selectedIndex].value;
+    let characterOutput = selectCharacter.options[selectCharacter.selectedIndex].value;
     console.log(characterOutput);
 
     if (characterOutput === "Hunter") {
@@ -104,8 +127,8 @@ class Game {
     console.log(this.villain);
   }
   pairAttackValue(btnValue) {
-    this.hero.attacks.filter(btnValue);
-    console.log(this.hero.attacks);
+    let chosenAttack = this.hero.attacks.find(({ attack }) => attack === `${btnValue}`);
+    console.log(chosenAttack.value);
   }
 }
 
