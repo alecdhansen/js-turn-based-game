@@ -1,6 +1,6 @@
 const selectCharacter = document.querySelector(".character");
 const startBtn = document.querySelector(".start-btn");
-const attackBtn = document.querySelector(".attack-button");
+const attackBtns = document.querySelectorAll(".attack-button");
 
 class Character {
   constructor(name) {
@@ -110,6 +110,9 @@ startBtn.addEventListener("click", () => {
   game.getActiveVillain();
 });
 
-attackBtn.addEventListener("click", () => {
-  
+attackBtns.forEach((attackBtn)  => {
+  attackBtn.addEventListener("click", () => {
+
+  }
 }
+
