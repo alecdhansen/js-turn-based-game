@@ -33,108 +33,108 @@ class Villain extends Character {
   }
 }
 
-class Hunter extends Hero {
+class Superman extends Hero {
   constructor() {
     super();
-    this.name = "Hunter";
-    this.attacks = [
-      { attack: "punch", value: 5 },
-      { attack: "kick", value: 20 },
-      { attack: "slash", value: 10 },
-      { attack: "magic", value: 10 },
-      { attack: "insult", value: 15 },
-    ];
-  }
-}
-
-class Titan extends Hero {
-  constructor() {
-    super();
-    this.name = "Titan";
-    this.attacks = [
-      { attack: "punch", value: 10 },
-      { attack: "kick", value: 10 },
-      { attack: "slash", value: 15 },
-      { attack: "magic", value: 5 },
-      { attack: "insult", value: 20 },
-    ];
-  }
-}
-
-class Warlock extends Hero {
-  constructor() {
-    super();
-    this.name = "Warlock";
-    this.attacks = [
-      { attack: "punch", value: 10 },
-      { attack: "kick", value: 15 },
-      { attack: "slash", value: 20 },
-      { attack: "magic", value: 10 },
-      { attack: "insult", value: 5 },
-    ];
-  }
-}
-
-class Wizard extends Hero {
-  constructor() {
-    super();
-    this.name = "Warlock";
-    this.attacks = [
-      { attack: "punch", value: 15 },
-      { attack: "kick", value: 10 },
-      { attack: "slash", value: 5 },
-      { attack: "magic", value: 10 },
-      { attack: "insult", value: 20 },
-    ];
-  }
-}
-
-class Knight extends Hero {
-  constructor() {
-    super();
-    this.name = "Warlock";
+    this.name = "Superman";
     this.attacks = [
       { attack: "punch", value: 20 },
-      { attack: "kick", value: 5 },
-      { attack: "slash", value: 10 },
-      { attack: "magic", value: 15 },
-      { attack: "insult", value: 10 },
+      { attack: "spoon-smack", value: 15 },
+      { attack: "slap", value: 10 },
+      { attack: "web-shot", value: 10 },
+      { attack: "tickle", value: 5 },
     ];
   }
 }
 
-class Fallen extends Villain {
+class Captaincrunch extends Hero {
   constructor() {
     super();
-    this.name = "Fallen";
+    this.name = "Captain Crunch";
     this.attacks = [
       { attack: "punch", value: 5 },
-      { attack: "slash", value: 15 },
-      { attack: "magic", value: 10 },
+      { attack: "spoon-smack", value: 20 },
+      { attack: "slap", value: 15 },
+      { attack: "web-shot", value: 10 },
+      { attack: "tickle", value: 10 },
     ];
   }
 }
 
-class Overlord extends Villain {
+class Elastigirl extends Hero {
   constructor() {
     super();
-    this.name = "Overlord";
+    this.name = "Elastigirl";
+    this.attacks = [
+      { attack: "punch", value: 10 },
+      { attack: "spoon-smack", value: 5 },
+      { attack: "slap", value: 20 },
+      { attack: "web-shot", value: 15 },
+      { attack: "tickle", value: 10 },
+    ];
+  }
+}
+
+class Spiderman extends Hero {
+  constructor() {
+    super();
+    this.name = "Spiderman";
+    this.attacks = [
+      { attack: "punch", value: 10 },
+      { attack: "spoon-smack", value: 10 },
+      { attack: "slap", value: 5 },
+      { attack: "web-shot", value: 20 },
+      { attack: "tickle", value: 15 },
+    ];
+  }
+}
+
+class Tarzan extends Hero {
+  constructor() {
+    super();
+    this.name = "Tarzan";
     this.attacks = [
       { attack: "punch", value: 15 },
+      { attack: "spoon-smack", value: 10 },
+      { attack: "slap", value: 10 },
+      { attack: "web-shot", value: 5 },
+      { attack: "tickle", value: 20 },
+    ];
+  }
+}
+
+class Darthvader extends Villain {
+  constructor() {
+    super();
+    this.name = "Darth Vader";
+    this.attacks = [
+      { attack: "force-choke", value: 15 },
       { attack: "slash", value: 10 },
       { attack: "magic", value: 5 },
     ];
   }
 }
 
-class Skinner extends Villain {
+class Thejoker extends Villain {
   constructor() {
     super();
-    this.name = "Skinner";
+    this.name = "The Joker";
     this.attacks = [
-      { attack: "punch", value: 10 },
-      { attack: "slash", value: 5 },
-      { attack: "magic", value: 15 },
+      { attack: "force-choke", value: 5 },
+      { attack: "laugh", value: 15 },
+      { attack: "magic", value: 10 },
+    ];
+  }
+}
+
+class Bowser extends Villain {
+  constructor() {
+    super();
+    this.name = "Bowser";
+    this.attacks = [
+      { attack: "force-choke", value: 10 },
+      { attack: "laugh", value: 5 },
+      { attack: "breath-of-fire", value: 15 },
     ];
   }
 }
@@ -147,25 +147,26 @@ class Game {
   }
 
   getActiveHero() {
-    let characterOutput = selectCharacter.options[selectCharacter.selectedIndex].value;
+    let characterOutput =
+      selectCharacter.options[selectCharacter.selectedIndex].value;
     console.log(characterOutput);
 
-    if (characterOutput === "Hunter") {
-      this.hero = new Hunter();
-    } else if (characterOutput === "Titan") {
-      this.hero = new Titan();
-    } else if (characterOutput === "Warlock") {
-      this.hero = new Warlock();
-    } else if (characterOutput === "Wizard") {
-      this.hero = new Wizard();
-    } else if (characterOutput === "Knight") {
-      this.hero = new Knight();
+    if (characterOutput === "Superman") {
+      this.hero = new Superman();
+    } else if (characterOutput === "Captain-Crunch") {
+      this.hero = new Captaincrunch();
+    } else if (characterOutput === "Elastigirl") {
+      this.hero = new Elastigirl();
+    } else if (characterOutput === "Spiderman") {
+      this.hero = new Spiderman();
+    } else if (characterOutput === "Tarzan") {
+      this.hero = new Tarzan();
     }
     console.log(this.hero);
   }
 
   getActiveVillain() {
-    const villainOptions = [new Fallen(), new Overlord(), new Skinner()];
+    const villainOptions = [new Darthvader(), new Thejoker(), new Bowser()];
     console.log(villainOptions);
 
     const random = Math.floor(Math.random() * villainOptions.length);
@@ -176,7 +177,9 @@ class Game {
   }
 
   pairAttackValue(btnValue) {
-    let chosenAttack = this.hero.attacks.find(({ attack }) => attack === `${btnValue}`);
+    let chosenAttack = this.hero.attacks.find(
+      ({ attack }) => attack === `${btnValue}`
+    );
     // console.log(chosenAttack.value, "hero attack");
     this.villain.health -= chosenAttack.value;
     // console.log(this.villain.health, "villain health");
@@ -258,8 +261,8 @@ attackBtns.forEach((attackBtn) => {
     game.pairAttackValue(value);
   });
 });
- 
-function Media ({myAudio} = {}) {
-  this.myAudio = myAudio; 
-  console.log(myAudio)
+
+function Media({ myAudio } = {}) {
+  this.myAudio = myAudio;
+  console.log(myAudio);
 }
