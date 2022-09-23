@@ -153,7 +153,7 @@ class Game {
 
     if (characterOutput === "Superman") {
       this.hero = new Superman();
-    } else if (characterOutput === "Captain-Crunch") {
+    } else if (characterOutput === "Captain Crunch") {
       this.hero = new Captaincrunch();
     } else if (characterOutput === "Elastigirl") {
       this.hero = new Elastigirl();
