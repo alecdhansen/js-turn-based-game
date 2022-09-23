@@ -145,17 +145,77 @@ class Game {
     }, 5000);
   }
 }
+class Overlord extends Villain {
+  constructor() {
+    super();
+    this.name = "Overlord";
+    this.attacks = [{ bite: 5 }, { grab: 20 }, { shoot: 10 }];
+  }
+}
+class Skinner extends Villain {
+  constructor() {
+    super();
+    this.name = "Skinner";
+    this.attacks = [{ bite: 20 }, { grab: 10 }, { shoot: 5 }];
+  }
+}
 
-const game = new Game();
+class Game {
+  constructor() {
+    this.hero = [];
+    this.villain = [];
 
-startBtn.addEventListener("click", () => {
-  game.getActiveHero();
-  game.getActiveVillain();
-});
+    console.log(this.hero, "Hero");
+    
 
-attackBtns.forEach((attackBtn) => {
-  attackBtn.addEventListener("click", (e) => {
-    let value = e.target.value;
-    game.pairAttackValue(value);
-  });
-});
+    attackBtn.map(attackBtn => {
+      attackBtn.addEventListener('click',(e) => { 
+        if(e.target.innerText ==="Slash"){
+          console.log(this.hero.attacks[1], "Slash");
+          return this.hero.attacks[1];
+          
+        }
+        if(e.target.innerText ==="Punch" ){
+          console.log(this.hero.attacks.punch, "punch");
+          return this.hero.attacks[0];
+    
+        }
+        if(e.target.innerText==="Magic"){
+          console.log(this.hero.attacks[2], "Magic");
+          return this.hero.attacks[2];
+        }
+    
+    
+    }) })
+  }
+
+  getActiveHero() {
+    let characterOutput =
+      selectCharacter.options[selectCharacter.selectedIndex].value;
+    console.log(characterOutput);
+
+    if (characterOutput === "Hunter") {
+      this.hero = new Hunter();
+    } else if (characterOutput === "Titan") {
+      this.hero = new Titan();
+    } else if (characterOutput === "Warlock") {
+      this.hero = new Warlock();
+    }
+
+    console.log(this.hero);
+    
+  }
+
+  getActiveVillain() {
+    const villainOptions = [new Fallen(), new Overlord(), new Skinner()];
+    console.log(villainOptions);
+
+    const random = Math.floor(Math.random() * villainOptions.length);
+    console.log(random);
+    this.villain = villainOptions[random];
+
+    console.log(this.villain);
+  }
+}
+
+const hunter = new Hunter();
