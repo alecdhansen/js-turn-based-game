@@ -2,7 +2,6 @@ const selectCharacter = document.querySelector(".character");
 const startBtn = document.querySelector(".start-btn");
 const attackBtns = document.querySelectorAll(".attack-button");
 
-
 class Character {
   constructor(name) {
     this.name = name;
@@ -29,9 +28,11 @@ class Hunter extends Hero {
     super();
     this.name = "Hunter";
     this.attacks = [
-      { attack: "punch", value: 10 },
-      { attack: "slash", value: 15 },
+      { attack: "punch", value: 5 },
+      { attack: "kick", value: 20 },
+      { attack: "slash", value: 10 },
       { attack: "magic", value: 10 },
+      { attack: "insult", value: 15 },
     ];
   }
 }
@@ -41,9 +42,11 @@ class Titan extends Hero {
     super();
     this.name = "Titan";
     this.attacks = [
-      { attack: "punch", value: 20 },
-      { attack: "slash", value: 10 },
+      { attack: "punch", value: 10 },
+      { attack: "kick", value: 10 },
+      { attack: "slash", value: 15 },
       { attack: "magic", value: 5 },
+      { attack: "insult", value: 20 },
     ];
   }
 }
@@ -54,8 +57,38 @@ class Warlock extends Hero {
     this.name = "Warlock";
     this.attacks = [
       { attack: "punch", value: 10 },
+      { attack: "kick", value: 15 },
+      { attack: "slash", value: 20 },
+      { attack: "magic", value: 10 },
+      { attack: "insult", value: 5 },
+    ];
+  }
+}
+
+class Wizard extends Hero {
+  constructor() {
+    super();
+    this.name = "Warlock";
+    this.attacks = [
+      { attack: "punch", value: 15 },
+      { attack: "kick", value: 10 },
       { attack: "slash", value: 5 },
-      { attack: "magic", value: 20 },
+      { attack: "magic", value: 10 },
+      { attack: "insult", value: 20 },
+    ];
+  }
+}
+
+class Knight extends Hero {
+  constructor() {
+    super();
+    this.name = "Warlock";
+    this.attacks = [
+      { attack: "punch", value: 20 },
+      { attack: "kick", value: 5 },
+      { attack: "slash", value: 10 },
+      { attack: "magic", value: 15 },
+      { attack: "insult", value: 10 },
     ];
   }
 }
@@ -65,7 +98,7 @@ class Fallen extends Villain {
     super();
     this.name = "Fallen";
     this.attacks = [
-      { attack: "punch", value: 10 },
+      { attack: "punch", value: 5 },
       { attack: "slash", value: 15 },
       { attack: "magic", value: 10 },
     ];
@@ -77,9 +110,9 @@ class Overlord extends Villain {
     super();
     this.name = "Overlord";
     this.attacks = [
-      { attack: "punch", value: 10 },
-      { attack: "slash", value: 15 },
-      { attack: "magic", value: 10 },
+      { attack: "punch", value: 15 },
+      { attack: "slash", value: 10 },
+      { attack: "magic", value: 5 },
     ];
   }
 }
@@ -90,8 +123,8 @@ class Skinner extends Villain {
     this.name = "Skinner";
     this.attacks = [
       { attack: "punch", value: 10 },
-      { attack: "slash", value: 15 },
-      { attack: "magic", value: 10 },
+      { attack: "slash", value: 5 },
+      { attack: "magic", value: 15 },
     ];
   }
 }
@@ -114,8 +147,11 @@ class Game {
       this.hero = new Titan();
     } else if (characterOutput === "Warlock") {
       this.hero = new Warlock();
+    } else if (characterOutput === "Wizard") {
+      this.hero = new Wizard();
+    } else if (characterOutput === "Knight") {
+      this.hero = new Knight();
     }
-
     console.log(this.hero);
   }
 
@@ -136,7 +172,7 @@ class Game {
     );
     console.log(chosenAttack.value, "hero attack");
     this.villain.health -= chosenAttack.value;
-    document.querySelector(".villanPower").innerHTML= this.villain.health;
+    document.querySelector(".villainPower").innerHTML = this.villain.health;
     console.log(this.villain.health, "villain health");
     if( this.villain.health <= 0){
       this.gameOver = true;
@@ -147,11 +183,16 @@ class Game {
       let villainAttackValue = this.villain.attacks[random].value;
       console.log(villainAttackValue, "villain attack");
       this.hero.health -= villainAttackValue;
+<<<<<<< HEAD
       document.querySelector(".heroPower").innerHTML= this.hero.health;
       console.log(this.hero.health, "hero health");
       if( this.hero.health <= 0){
         this.gameOver = true;
       }
+=======
+      document.querySelector(".heroPower").innerHTML = this.villain.health;
+      console.log(this.hero.health, "hero health");
+>>>>>>> b552a80 (add heroes and attacks)
     }, 1000);
   }
 }
