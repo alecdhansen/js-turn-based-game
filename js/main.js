@@ -220,17 +220,17 @@ class Game {
     if (!gameOver) {
       return;
     } else if (this.hero.health <= 0) {
-      heroText.value = "Hero Loses!";
+      heroText.value = `${this.hero.name} loses!`;
       this.hero.health = 0;
-      villainText.value = "Villain Wins!";
+      villainText.value = `${this.villain.name} wins!`;
 
       attackBtns.forEach((attackBtn) => {
         attackBtn.disabled = true;
       });
     } else if (this.villain.health <= 0) {
-      heroText.value = "Hero Wins!";
+      heroText.value = `${this.hero.name} wins!`;
       this.villain.health = 0;
-      villainText.value = "Villain Loses!";
+      villainText.value = `${this.villain.name} loses!`;
 
       attackBtns.forEach((attackBtn) => {
         attackBtn.disabled = true;
