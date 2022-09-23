@@ -2,6 +2,7 @@ const selectCharacter = document.querySelector(".character");
 const startBtn = document.querySelector(".start-btn");
 const attackBtns = document.querySelectorAll(".attack-button");
 
+
 class Character {
   constructor(name) {
     this.name = name;
@@ -134,6 +135,7 @@ class Game {
     );
     console.log(chosenAttack.value, "hero attack");
     this.villain.health -= chosenAttack.value;
+    document.querySelector(".villanPower").innerHTML= this.villain.health;
     console.log(this.villain.health, "villain health");
 
     setTimeout(() => {
@@ -141,81 +143,22 @@ class Game {
       let villainAttackValue = this.villain.attacks[random].value;
       console.log(villainAttackValue, "villain attack");
       this.hero.health -= villainAttackValue;
+      document.querySelector(".heroPower").innerHTML= this.villain.health;
       console.log(this.hero.health, "hero health");
     }, 5000);
   }
 }
-class Overlord extends Villain {
-  constructor() {
-    super();
-    this.name = "Overlord";
-    this.attacks = [{ bite: 5 }, { grab: 20 }, { shoot: 10 }];
-  }
-}
-class Skinner extends Villain {
-  constructor() {
-    super();
-    this.name = "Skinner";
-    this.attacks = [{ bite: 20 }, { grab: 10 }, { shoot: 5 }];
-  }
-}
 
-class Game {
-  constructor() {
-    this.hero = [];
-    this.villain = [];
+const game = new Game();
 
-    console.log(this.hero, "Hero");
-    
+startBtn.addEventListener("click", () => {
+  game.getActiveHero();
+  game.getActiveVillain();
+});
 
-    attackBtn.map(attackBtn => {
-      attackBtn.addEventListener('click',(e) => { 
-        if(e.target.innerText ==="Slash"){
-          console.log(this.hero.attacks[1], "Slash");
-          return this.hero.attacks[1];
-          
-        }
-        if(e.target.innerText ==="Punch" ){
-          console.log(this.hero.attacks.punch, "punch");
-          return this.hero.attacks[0];
-    
-        }
-        if(e.target.innerText==="Magic"){
-          console.log(this.hero.attacks[2], "Magic");
-          return this.hero.attacks[2];
-        }
-    
-    
-    }) })
-  }
-
-  getActiveHero() {
-    let characterOutput =
-      selectCharacter.options[selectCharacter.selectedIndex].value;
-    console.log(characterOutput);
-
-    if (characterOutput === "Hunter") {
-      this.hero = new Hunter();
-    } else if (characterOutput === "Titan") {
-      this.hero = new Titan();
-    } else if (characterOutput === "Warlock") {
-      this.hero = new Warlock();
-    }
-
-    console.log(this.hero);
-    
-  }
-
-  getActiveVillain() {
-    const villainOptions = [new Fallen(), new Overlord(), new Skinner()];
-    console.log(villainOptions);
-
-    const random = Math.floor(Math.random() * villainOptions.length);
-    console.log(random);
-    this.villain = villainOptions[random];
-
-    console.log(this.villain);
-  }
-}
-
-const hunter = new Hunter();
+attackBtns.forEach((attackBtn) => {
+  attackBtn.addEventListener("click", (e) => {
+    let value = e.target.value;
+    game.pairAttackValue(value);
+  });
+});
