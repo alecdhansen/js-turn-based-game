@@ -126,9 +126,20 @@ class Game {
 
     console.log(this.villain);
   }
+
   pairAttackValue(btnValue) {
     let chosenAttack = this.hero.attacks.find(({ attack }) => attack === `${btnValue}`);
     console.log(chosenAttack.value);
+    this.villain.health -= chosenAttack.value;
+    console.log(this.villain.health, "v");
+
+    setTimeout(() => {
+      const random = Math.floor(Math.random() * this.villain.attacks.length);
+      let villainAttackValue = this.villain.attacks[random].value;
+      console.log(villainAttackValue);
+      this.hero.health -= villainAttackValue;
+      console.log(this.hero.health, "h");
+    }, 5000);
   }
 }
 
