@@ -100,6 +100,7 @@ class Game {
   constructor() {
     this.hero = [];
     this.villain = [];
+    this.gameOver=false;
   }
 
   getActiveHero() {
@@ -137,15 +138,21 @@ class Game {
     this.villain.health -= chosenAttack.value;
     document.querySelector(".villanPower").innerHTML= this.villain.health;
     console.log(this.villain.health, "villain health");
+    if( this.villain.health <= 0){
+      this.gameOver = true;
+    }
 
     setTimeout(() => {
       const random = Math.floor(Math.random() * this.villain.attacks.length);
       let villainAttackValue = this.villain.attacks[random].value;
       console.log(villainAttackValue, "villain attack");
       this.hero.health -= villainAttackValue;
-      document.querySelector(".heroPower").innerHTML= this.villain.health;
+      document.querySelector(".heroPower").innerHTML= this.hero.health;
       console.log(this.hero.health, "hero health");
-    }, 5000);
+      if( this.hero.health <= 0){
+        this.gameOver = true;
+      }
+    }, 1000);
   }
 }
 
