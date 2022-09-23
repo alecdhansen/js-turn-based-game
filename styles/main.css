@@ -20,8 +20,12 @@ ul{
   background-color: green;
 }
 
-.villanPower{
+.villainPower{
   width: 50px;
   height: 20px;
   background-color: red;
+}
+
+.hero-text, .villain-text {
+  width: 400px;
 }
