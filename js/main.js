@@ -1,5 +1,6 @@
 const selectCharacter = document.querySelector(".character");
 const startBtn = document.querySelector(".start-btn");
+const attackBtn = document.querySelector(".attack-button");
 
 class Character {
   constructor(name) {
@@ -108,3 +109,7 @@ startBtn.addEventListener("click", () => {
   game.getActiveHero();
   game.getActiveVillain();
 });
+
+attackBtn.addEventListener("click", () => {
+  
+}
