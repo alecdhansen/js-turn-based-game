@@ -78,7 +78,8 @@ class Game {
   }
 
   getActiveHero() {
-    let characterOutput = selectCharacter.options[selectCharacter.selectedIndex].value;
+    let characterOutput =
+      selectCharacter.options[selectCharacter.selectedIndex].value;
     console.log(characterOutput);
 
     if (characterOutput === "Hunter") {
@@ -102,6 +103,10 @@ class Game {
 
     console.log(this.villain);
   }
+  pairAttackValue(btnValue) {
+    this.hero.attacks.filter(btnValue);
+    console.log(this.hero.attacks);
+  }
 }
 
 const game = new Game();
@@ -111,9 +116,9 @@ startBtn.addEventListener("click", () => {
   game.getActiveVillain();
 });
 
-attackBtns.forEach((attackBtn)  => {
-  attackBtn.addEventListener("click", () => {
-
-  }
-}
-
+attackBtns.forEach((attackBtn) => {
+  attackBtn.addEventListener("click", (e) => {
+    let value = e.target.value;
+    game.pairAttackValue(value);
+  });
+});
