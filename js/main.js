@@ -133,7 +133,7 @@ class Game {
   constructor() {
     this.hero = [];
     this.villain = [];
-    this.gameOver=false;
+    this.gameOver = false;
   }
 
   getActiveHero() {
@@ -174,7 +174,7 @@ class Game {
     this.villain.health -= chosenAttack.value;
     document.querySelector(".villainPower").innerHTML = this.villain.health;
     console.log(this.villain.health, "villain health");
-    if( this.villain.health <= 0){
+    if (this.villain.health <= 0) {
       this.gameOver = true;
     }
 
@@ -183,16 +183,13 @@ class Game {
       let villainAttackValue = this.villain.attacks[random].value;
       console.log(villainAttackValue, "villain attack");
       this.hero.health -= villainAttackValue;
-<<<<<<< HEAD
-      document.querySelector(".heroPower").innerHTML= this.hero.health;
+      document.querySelector(".heroPower").innerHTML = this.hero.health;
       console.log(this.hero.health, "hero health");
-      if( this.hero.health <= 0){
+      if (this.hero.health <= 0) {
         this.gameOver = true;
       }
-=======
       document.querySelector(".heroPower").innerHTML = this.villain.health;
       console.log(this.hero.health, "hero health");
->>>>>>> b552a80 (add heroes and attacks)
     }, 1000);
   }
 }
