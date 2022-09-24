@@ -254,7 +254,9 @@ class Game {
   resetGame() {
     heroText.value = "";
     villainText.value = "";
-    document.querySelector(".character").selectedIndex = 0;
+    this.villain.health = 100;
+    this.hero.health = 100;
+    actionText.value = "";
   }
 }
 
@@ -262,6 +264,7 @@ const game = new Game();
 
 startBtn.addEventListener("click", () => {
   gameOver = false;
+  game.resetGame();
   game.getActiveHero();
   game.getActiveVillain();
   game.displayPlayerNames();
@@ -331,7 +334,12 @@ onBtn.addEventListener("click", () => {
 
     startBtn.disabled = true;
     selectCharacter.disabled = true;
+    document.querySelector(".character").selectedIndex = 0;
     isOn = false;
+    attackBtns.forEach((attackBtn) => {
+      attackBtn.disabled = true;
+    });
+    game.resetGame();
   }
 });
 
@@ -341,47 +349,3 @@ onBtn.addEventListener("click", () => {
 // Music promoted by https://www.chosic.com/free-music/all/
 // Creative Commons CC BY 3.0
 // https://creativecommons.org/licenses/by/3.0/ -->
-
-let isOn = false;
-const onBtn = document.querySelector("#on-button");
-onBtn.addEventListener("click", () => {
-  if (!isOn) {
-    document.querySelector("#on-button").style.backgroundColor = "#91dc6f";
-    document.querySelector("#on-button").style.borderColor = "#65994d";
-    document.querySelector(".screen-img").src = "./images/stadium-2.jpg";
-    document.querySelector(".hero-text").style.display = "block";
-    document.querySelector(".vs-logo").style.display = "block";
-    document.querySelector(".villain-text").style.display = "block";
-    document.querySelector(".heroPower").style.display = "block";
-    document.querySelector(".heroPower-shadow").style.display = "block";
-    document.querySelector(".villainPower").style.display = "block";
-    document.querySelector(".villainPower-shadow").style.display = "block";
-    document.querySelector(".action-text").style.display = "block";
-    document.querySelector(".players").style.display = "flex";
-    document.querySelector(".hero-img").style.display = "block";
-    document.querySelector(".villain-img").style.display = "block";
-
-    startBtn.disabled = false;
-    selectCharacter.disabled = false;
-    isOn = true;
-  } else if (isOn) {
-    document.querySelector("#on-button").style.backgroundColor = "#e34e45";
-    document.querySelector("#on-button").style.borderColor = "#a43832";
-    document.querySelector(".screen-img").src = "./images/loading-scrn.png";
-    document.querySelector(".hero-text").style.display = "none";
-    document.querySelector(".vs-logo").style.display = "none";
-    document.querySelector(".villain-text").style.display = "none";
-    document.querySelector(".heroPower").style.display = "none";
-    document.querySelector(".heroPower-shadow").style.display = "none";
-    document.querySelector(".villainPower").style.display = "none";
-    document.querySelector(".villainPower-shadow").style.display = "none";
-    document.querySelector(".action-text").style.display = "none";
-    document.querySelector(".players").style.display = "flex";
-    document.querySelector(".hero-img").style.display = "none";
-    document.querySelector(".villain-img").style.display = "none";
-
-    startBtn.disabled = true;
-    selectCharacter.disabled = true;
-    isOn = false;
-  }
-});
