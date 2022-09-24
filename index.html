@@ -12,13 +12,16 @@
       <article class="game-pad">
         <header class="game-options">
           <select class="character">
-            <option>- Select Your Hero -</option>
+            <option id="default-value" selected>- Select Your Hero -</option>
             <option value="Superman">Superman</option>
             <option value="Captain Crunch">Captain Crunch</option>
             <option value="Elastigirl">Elastigirl</option>
             <option value="Spiderman">Spiderman</option>
             <option value="Tarzan">Tarzan</option>
           </select>
+          <div class="on-btn">
+            <button id="on-button"></button><span class="on-text">on/off</span>
+          </div>
           <button class="start-btn" value="PLAY" onclick="playAudio()">
             Start Game!
             <audio
@@ -28,7 +31,7 @@
           </button>
         </header>
         <section class="game-screen">
-          <img class="screen-img" src="./images/stadium-2.jpg" alt="" />
+          <img class="screen-img" src="./images/loading-scrn.png" alt="" />
           <input type="text" class="hero-text" disabled />
           <img class="vs-logo" src="./images/vs.png" alt="" />
           <input type="text" class="villain-text" disabled />
