@@ -21,15 +21,14 @@
           </select>
           <button class="start-btn" value="PLAY" onclick="playAudio('audio')">
           <div class="on-btn">
-            <button id="on-button"></button><span class="on-text">on/off</span>
+            <button id="on-button" value="PLAY" onclick="play()">
+              <audio
+                id="audio"
+                src="https://www.chosic.com/wp-content/uploads/2021/09/Hostiles-Inbound-Epic-Battle-Music-Powerful-Orchestral.mp3"
+              ></audio></button
+            ><span class="on-text">on/off</span>
           </div>
-          <button class="start-btn" value="PLAY" onclick="play()">
-            Start Game!
-            <audio
-              id="audio"
-              src="https://www.chosic.com/wp-content/uploads/2021/09/Hostiles-Inbound-Epic-Battle-Music-Powerful-Orchestral.mp3"
-            ></audio>
-          </button>
+          <button class="start-btn">Start Game!</button>
         </header>
         <section class="game-screen">
           <img class="screen-img" src="./images/loading-scrn.png" alt="" />

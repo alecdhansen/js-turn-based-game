@@ -151,7 +151,8 @@ class Game {
   }
 
   getActiveHero() {
-    let characterOutput = selectCharacter.options[selectCharacter.selectedIndex].value;
+    let characterOutput =
+      selectCharacter.options[selectCharacter.selectedIndex].value;
     console.log(characterOutput);
 
     if (characterOutput === "Superman") {
@@ -180,7 +181,9 @@ class Game {
   }
 
   pairAttackValue(btnValue) {
-    let chosenAttack = this.hero.attacks.find(({ attack }) => attack === `${btnValue}`);
+    let chosenAttack = this.hero.attacks.find(
+      ({ attack }) => attack === `${btnValue}`
+    );
     // console.log(chosenAttack.value, "hero attack");
     this.villain.health -= chosenAttack.value;
     // console.log(this.villain.health, "villain health");
@@ -311,6 +314,8 @@ onBtn.addEventListener("click", () => {
     document.querySelector(".players").style.display = "flex";
     document.querySelector(".hero-img").style.display = "block";
     document.querySelector(".villain-img").style.display = "block";
+    document.getElementById("audio").muted = false;
+    document.getElementById("audio").currentTime = 0;
 
     selectCharacter.disabled = false;
     isOn = true;
@@ -329,6 +334,7 @@ onBtn.addEventListener("click", () => {
     document.querySelector(".players").style.display = "flex";
     document.querySelector(".hero-img").style.display = "none";
     document.querySelector(".villain-img").style.display = "none";
+    document.getElementById("audio").muted = true;
 
     startBtn.disabled = true;
     selectCharacter.disabled = true;
