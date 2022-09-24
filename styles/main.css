@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Dangrek&family=Press+Start+2P&family=Silkscreen&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Dangrek&family=Press+Start+2P&family=Silkscreen&display=swap");
 
 html {
   box-sizing: border-box;
@@ -25,21 +25,20 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-image: url(../images/bg2.jpeg);
+  background-image: url(../images/background-sky.png);
   background-size: cover;
 }
 
 .game-pad {
   width: 1000px;
   height: 650px;
-  background-color: #A5A4A4;
+  background-color: #a5a4a4;
   display: flex;
   align-items: center;
   flex-direction: column;
   border-radius: 50px;
   border: 10px solid #848282;
   box-shadow: 10px 10px 20px #000;
-
 }
 
 .game-options {
@@ -50,7 +49,8 @@ body {
   align-items: center;
 }
 
-.start-btn, .character {
+.start-btn,
+.character {
   display: block;
   width: 30%;
   padding: 10px;
@@ -83,7 +83,9 @@ body {
   color: #73fa34;
   background-color: rgba(0, 0, 0, 0.8);
 }
-
+.villain-text {
+  color: #e91f15;
+}
 .hero-text {
   display: block;
   position: absolute;
@@ -95,7 +97,7 @@ body {
   display: block;
   position: absolute;
   top: 10px;
-  right: 10px;  
+  right: 10px;
 }
 
 .vs-logo {
@@ -117,7 +119,7 @@ body {
   font-family: "Press Start 2P", Arial, Helvetica, sans-serif;
   font-size: 12px;
   text-align: center;
-  color: #73fa34;
+  color: #f5eb60;
   background-color: rgba(0, 0, 0, 0.8);
 }
 
@@ -134,7 +136,7 @@ body {
 .villainPower {
   width: 250px;
   height: 20px;
-  background: linear-gradient(45deg,#f7b538, #f62d2d);
+  background: linear-gradient(45deg, #f7b538, #f62d2d);
   position: absolute;
   top: 61px;
   right: 10px;
@@ -188,18 +190,18 @@ body {
   border: 5px solid #6a51aa;
 }
 .actions > ul > li:nth-child(2) > button {
-  background-color: #4EA3EF;
+  background-color: #4ea3ef;
   border: 5px solid #3877ad;
 }
 .actions > ul > li:nth-child(3) > button {
-  background-color: #91DC6F;
+  background-color: #91dc6f;
   border: 5px solid #65994d;
 }
 .actions > ul > li:nth-child(4) > button {
-  background-color: #F5EB60;
-  border: 5px solid #bdb549
+  background-color: #f5eb60;
+  border: 5px solid #bdb549;
 }
 .actions > ul > li:nth-child(5) > button {
-  background-color: #E34E45;
+  background-color: #e34e45;
   border: 5px solid #a43832;
 }
