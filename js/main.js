@@ -280,6 +280,28 @@ attackBtns.forEach((attackBtn) => {
   attackBtn.addEventListener("click", (e) => {
     let value = e.target.value;
     game.pairAttackValue(value);
+
+   if (value === 'punch') {
+    playAudio('audio-punch')
+   }
+
+   if (value === 'spoon smack') {
+    playAudio('audio-smack')
+   }
+
+   if (value === 'slap') {
+    playAudio('audio-slap')
+   }
+
+   if (value === 'web shot') {
+    playAudio('audio-shot')
+   }
+
+   if (value === 'tickle') {
+    playAudio('audio-joker')
+   }
+
+
   });
 });
 
