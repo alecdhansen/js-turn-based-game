@@ -19,7 +19,7 @@
             <option value="Spiderman">Spiderman</option>
             <option value="Tarzan">Tarzan</option>
           </select>
-          <button class="start-btn" value="PLAY" onclick="playAudio()">
+          <button class="start-btn" value="PLAY" onclick="playAudio('audio')">
             Start Game!
             <audio
               id="audio"
@@ -49,18 +49,24 @@
                 class="attack-button"
                 value="punch"
                 value="PLAY"
-                onclick="playAudio()"
+                onclick="playAudio('audio-punch')"
               >
                 Punch
                 <audio
-                  id="audio"
-                  src="https://pixabay.com/sound-effects/karate-chop-6357/"
+                  id="audio-punch"
+                  src="audio/slap-in-the-face-101869.mp3"
                 ></audio>
               </button>
             </li>
             <li>
-              <button class="attack-button" value="spoon-smack">
-                Spoon Smack
+              <button
+                class="attack-button"
+                value="spoon-smack"
+                value="PLAY"
+                onclick="playAudio('audio-smack')"
+              >
+                spoon-smack
+                <audio id="audio-smack" src="audio/umph-47201.mp3"></audio>
               </button>
             </li>
             <li><button class="attack-button" value="slap">Slap</button></li>

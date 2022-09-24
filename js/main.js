@@ -266,10 +266,11 @@ attackBtns.forEach((attackBtn) => {
   });
 });
 
-function playAudio() {
-  let audio = document.getElementById("audio");
+function playAudio(audioFile) {
+  let audio = document.getElementById(audioFile);
   audio.play();
 }
+
 
 // music credits below 
 
