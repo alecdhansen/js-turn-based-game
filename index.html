@@ -12,14 +12,21 @@
       <article class="game-pad">
         <header class="game-options">
           <select class="character">
-            <option>- Select Your Hero -</option>
+            <option id="default-value" selected>- Select Your Hero -</option>
             <option value="Superman">Superman</option>
             <option value="Captain Crunch">Captain Crunch</option>
             <option value="Elastigirl">Elastigirl</option>
             <option value="Spiderman">Spiderman</option>
             <option value="Tarzan">Tarzan</option>
           </select>
+<<<<<<< HEAD
           <button class="start-btn" value="PLAY" onclick="playAudio('audio')">
+=======
+          <div class="on-btn">
+            <button id="on-button"></button><span class="on-text">on/off</span>
+          </div>
+          <button class="start-btn" value="PLAY" onclick="playAudio()">
+>>>>>>> 96dc31fe7832e4895d39e00fac9abfcc477951c6
             Start Game!
             <audio
               id="audio"
@@ -28,7 +35,7 @@
           </button>
         </header>
         <section class="game-screen">
-          <img class="screen-img" src="./images/stadium-2.jpg" alt="" />
+          <img class="screen-img" src="./images/loading-scrn.png" alt="" />
           <input type="text" class="hero-text" disabled />
           <img class="vs-logo" src="./images/vs.png" alt="" />
           <input type="text" class="villain-text" disabled />
@@ -59,6 +66,7 @@
               </button>
             </li>
             <li>
+<<<<<<< HEAD
               <button
                 class="attack-button"
                 value="spoon-smack"
@@ -67,11 +75,15 @@
               >
                 spoon-smack
                 <audio id="audio-smack" src="audio/umph-47201.mp3"></audio>
+=======
+              <button class="attack-button" value="spoon smack">
+                Spoon Smack
+>>>>>>> 96dc31fe7832e4895d39e00fac9abfcc477951c6
               </button>
             </li>
             <li><button class="attack-button" value="slap">Slap</button></li>
             <li>
-              <button class="attack-button" value="web-shot">Web Shot</button>
+              <button class="attack-button" value="web shot">Web Shot</button>
             </li>
             <li>
               <button class="attack-button" value="tickle">Tickle</button>
@@ -80,7 +92,6 @@
         </section>
       </article>
     </main>
-
     <script src="./js/main.js"></script>
   </body>
 </html>
