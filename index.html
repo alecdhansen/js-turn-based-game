@@ -19,7 +19,13 @@
             <option value="Spiderman">Spiderman</option>
             <option value="Tarzan">Tarzan</option>
           </select>
-          <button class="start-btn">Start Game!</button>
+          <button class="start-btn" value="PLAY" onclick="playAudio()">
+            Start Game!
+            <audio
+              id="audio"
+              src="https://www.chosic.com/wp-content/uploads/2021/09/Hostiles-Inbound-Epic-Battle-Music-Powerful-Orchestral.mp3"
+            ></audio>
+          </button>
         </header>
         <section class="game-screen">
           <img class="screen-img" src="./images/stadium-2.jpg" alt="" />
@@ -38,7 +44,20 @@
         </section>
         <section class="actions">
           <ul>
-            <li><button class="attack-button" value="punch">Punch</button></li>
+            <li>
+              <button
+                class="attack-button"
+                value="punch"
+                value="PLAY"
+                onclick="playAudio()"
+              >
+                Punch
+                <audio
+                  id="audio"
+                  src="https://pixabay.com/sound-effects/karate-chop-6357/"
+                ></audio>
+              </button>
+            </li>
             <li>
               <button class="attack-button" value="spoon-smack">
                 Spoon Smack
@@ -56,21 +75,6 @@
       </article>
     </main>
 
-    <audio
-      autoplay
-      class="media"
-      controls
-      src="https://www.chosic.com/wp-content/uploads/2021/09/Hostiles-Inbound-Epic-Battle-Music-Powerful-Orchestral.mp3"
-    >
-      <a
-        href="https://www.chosic.com/wp-content/uploads/2021/09/Hostiles-Inbound-Epic-Battle-Music-Powerful-Orchestral.mp3"
-      >
-      </a>
-    </audio>
-    <!-- Hostiles Inbound by Miguel Johnson | https://soundcloud.com/migueljohnsonmjmusic
-      Music promoted by https://www.chosic.com/free-music/all/
-      Creative Commons CC BY 3.0
-      https://creativecommons.org/licenses/by/3.0/ -->
     <script src="./js/main.js"></script>
   </body>
 </html>

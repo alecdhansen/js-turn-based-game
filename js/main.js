@@ -266,7 +266,12 @@ attackBtns.forEach((attackBtn) => {
   });
 });
 
-function Media({ myAudio } = {}) {
-  this.myAudio = myAudio;
-  console.log(myAudio);
+function playAudio() {
+  let audio = document.getElementById("audio");
+  audio.play();
 }
+
+// <!-- Hostiles Inbound by Miguel Johnson | https://soundcloud.com/migueljohnsonmjmusic
+// Music promoted by https://www.chosic.com/free-music/all/
+// Creative Commons CC BY 3.0
+// https://creativecommons.org/licenses/by/3.0/ -->
