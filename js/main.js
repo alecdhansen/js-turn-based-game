@@ -7,7 +7,6 @@ const heroText = document.querySelector(".hero-text");
 const villainText = document.querySelector(".villain-text");
 const actionText = document.querySelector(".action-text");
 const audio = document.getElementById("audio");
-// const audioSoundEffect = document.getElementById("audio-sound-effect");
 
 let gameOver = false;
 
@@ -271,24 +270,13 @@ attackBtns.forEach((attackBtn) => {
   });
 });
 
-<<<<<<< HEAD
 function play() {
   audio.play();
 }
 
-// function playSoundEffect() {
-//   audioSoundEffect.playSoundEffect();
-// }
-=======
-function playAudio() {
-  let audio = document.getElementById("audio");
-  audio.play();
-}
-
-// music credits below 
+// music credits below
 
 // <!-- Hostiles Inbound by Miguel Johnson | https://soundcloud.com/migueljohnsonmjmusic
 // Music promoted by https://www.chosic.com/free-music/all/
 // Creative Commons CC BY 3.0
 // https://creativecommons.org/licenses/by/3.0/ -->
->>>>>>> e849b1aaacece81ce2140a26a1cde21b0bea1882
