@@ -134,6 +134,7 @@ body {
   top: 61px;
   left: 10px;
   border-radius: 10px;
+  z-index: 20;
 }
 
 .villainPower {
@@ -144,8 +145,35 @@ body {
   top: 61px;
   right: 10px;
   border-radius: 10px;
+  z-index: 20;
+}
+.heroPower-shadow {
+  width: 250px;
+  height: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  top: 61px;
+  left: 10px;
+  border-radius: 10px;
+  z-index: 10;
+  border-color: rgba(118, 118, 118, 0.3);
+  border-width: 1px;
+  border-style: inset;
 }
 
+.villainPower-shadow {
+  width: 250px;
+  height: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  top: 61px;
+  right: 10px;
+  border-radius: 10px;
+  z-index: 10;
+  border-color: rgba(118, 118, 118, 0.3);
+  border-width: 1px;
+  border-style: inset;
+}
 .players {
   position: absolute;
   top: 120px;
