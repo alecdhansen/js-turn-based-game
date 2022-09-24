@@ -156,14 +156,19 @@ class Game {
 
     if (characterOutput === "Superman") {
       this.hero = new Superman();
+      document.querySelector(".hero-img").src = "./images/superman.png";
     } else if (characterOutput === "Captain Crunch") {
       this.hero = new Captaincrunch();
+      document.querySelector(".hero-img").src = "./images/captain-crunch.png";
     } else if (characterOutput === "Elastigirl") {
       this.hero = new Elastigirl();
+      document.querySelector(".hero-img").src = "./images/elastigirl.png";
     } else if (characterOutput === "Spiderman") {
       this.hero = new Spiderman();
+      document.querySelector(".hero-img").src = "./images/spiderman.png";
     } else if (characterOutput === "Tarzan") {
       this.hero = new Tarzan();
+      document.querySelector(".hero-img").src = "./images/tarzan.png";
     }
     console.log(this.hero);
   }
@@ -177,6 +182,15 @@ class Game {
     this.villain = villainOptions[random];
 
     console.log(this.villain);
+    if (this.villain.name === "Darth Vader") {
+      document.querySelector(".villain-img").src = "./images/darth-vader.png";
+    }
+    if (this.villain.name === "The Joker") {
+      document.querySelector(".villain-img").src = "./images/the-joker.png";
+    }
+    if (this.villain.name === "Bowser") {
+      document.querySelector(".villain-img").src = "./images/bowser.png";
+    }
   }
 
   pairAttackValue(btnValue) {
@@ -323,6 +337,8 @@ onBtn.addEventListener("click", () => {
     document.querySelector(".players").style.display = "flex";
     document.querySelector(".hero-img").style.display = "block";
     document.querySelector(".villain-img").style.display = "block";
+    document.querySelector(".hero-img").src = "";
+    document.querySelector(".villain-img").src = "";
     play();
     document.getElementById("audio").muted = false;
     document.getElementById("audio").currentTime = 0;
