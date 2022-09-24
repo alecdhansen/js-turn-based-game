@@ -233,6 +233,7 @@ class Game {
         attackBtns.forEach((attackBtn) => {
           attackBtn.disabled = false;
         });
+        actionText.value = "";
       }, 1500);
     }, 1500);
   }
