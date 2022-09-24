@@ -286,11 +286,6 @@ function playAudio(audioFile) {
 }
 
 
-// music credits below 
-function play() {
-  audio.play();
-}
-
 // music credits below
 
 // <!-- Hostiles Inbound by Miguel Johnson | https://soundcloud.com/migueljohnsonmjmusic
