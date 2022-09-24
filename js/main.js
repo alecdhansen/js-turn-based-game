@@ -6,6 +6,8 @@ const heroHealth = document.querySelector(".heroPower");
 const heroText = document.querySelector(".hero-text");
 const villainText = document.querySelector(".villain-text");
 const actionText = document.querySelector(".action-text");
+const audio = document.getElementById("audio");
+// const audioSoundEffect = document.getElementById("audio-sound-effect");
 
 let gameOver = false;
 
@@ -40,9 +42,9 @@ class Superman extends Hero {
     this.name = "Superman";
     this.attacks = [
       { attack: "punch", value: 20 },
-      { attack: "spoon-smack", value: 15 },
+      { attack: "spoon smack", value: 15 },
       { attack: "slap", value: 10 },
-      { attack: "web-shot", value: 10 },
+      { attack: "web shot", value: 10 },
       { attack: "tickle", value: 5 },
     ];
   }
@@ -54,9 +56,9 @@ class Captaincrunch extends Hero {
     this.name = "Captain Crunch";
     this.attacks = [
       { attack: "punch", value: 5 },
-      { attack: "spoon-smack", value: 20 },
+      { attack: "spoon smack", value: 20 },
       { attack: "slap", value: 15 },
-      { attack: "web-shot", value: 10 },
+      { attack: "web shot", value: 10 },
       { attack: "tickle", value: 10 },
     ];
   }
@@ -68,9 +70,9 @@ class Elastigirl extends Hero {
     this.name = "Elastigirl";
     this.attacks = [
       { attack: "punch", value: 10 },
-      { attack: "spoon-smack", value: 5 },
+      { attack: "spoon smack", value: 5 },
       { attack: "slap", value: 20 },
-      { attack: "web-shot", value: 15 },
+      { attack: "web shot", value: 15 },
       { attack: "tickle", value: 10 },
     ];
   }
@@ -82,7 +84,7 @@ class Spiderman extends Hero {
     this.name = "Spiderman";
     this.attacks = [
       { attack: "punch", value: 10 },
-      { attack: "spoon-smack", value: 10 },
+      { attack: "spoon smack", value: 10 },
       { attack: "slap", value: 5 },
       { attack: "web-shot", value: 20 },
       { attack: "tickle", value: 15 },
@@ -96,9 +98,9 @@ class Tarzan extends Hero {
     this.name = "Tarzan";
     this.attacks = [
       { attack: "punch", value: 15 },
-      { attack: "spoon-smack", value: 10 },
+      { attack: "spoon smack", value: 10 },
       { attack: "slap", value: 10 },
-      { attack: "web-shot", value: 5 },
+      { attack: "web shot", value: 5 },
       { attack: "tickle", value: 20 },
     ];
   }
@@ -148,7 +150,8 @@ class Game {
   }
 
   getActiveHero() {
-    let characterOutput = selectCharacter.options[selectCharacter.selectedIndex].value;
+    let characterOutput =
+      selectCharacter.options[selectCharacter.selectedIndex].value;
     console.log(characterOutput);
 
     if (characterOutput === "Superman") {
@@ -177,7 +180,9 @@ class Game {
   }
 
   pairAttackValue(btnValue) {
-    let chosenAttack = this.hero.attacks.find(({ attack }) => attack === `${btnValue}`);
+    let chosenAttack = this.hero.attacks.find(
+      ({ attack }) => attack === `${btnValue}`
+    );
     // console.log(chosenAttack.value, "hero attack");
     this.villain.health -= chosenAttack.value;
     // console.log(this.villain.health, "villain health");
@@ -266,7 +271,10 @@ attackBtns.forEach((attackBtn) => {
   });
 });
 
-function Media({ myAudio } = {}) {
-  this.myAudio = myAudio;
-  console.log(myAudio);
+function play() {
+  audio.play();
 }
+
+// function playSoundEffect() {
+//   audioSoundEffect.playSoundEffect();
+// }
