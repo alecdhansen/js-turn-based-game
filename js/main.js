@@ -151,8 +151,7 @@ class Game {
   }
 
   getActiveHero() {
-    let characterOutput =
-      selectCharacter.options[selectCharacter.selectedIndex].value;
+    let characterOutput = selectCharacter.options[selectCharacter.selectedIndex].value;
     console.log(characterOutput);
 
     if (characterOutput === "Superman") {
@@ -181,9 +180,7 @@ class Game {
   }
 
   pairAttackValue(btnValue) {
-    let chosenAttack = this.hero.attacks.find(
-      ({ attack }) => attack === `${btnValue}`
-    );
+    let chosenAttack = this.hero.attacks.find(({ attack }) => attack === `${btnValue}`);
     // console.log(chosenAttack.value, "hero attack");
     this.villain.health -= chosenAttack.value;
     // console.log(this.villain.health, "villain health");
