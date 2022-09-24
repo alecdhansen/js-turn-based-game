@@ -19,8 +19,17 @@
             <option value="Spiderman">Spiderman</option>
             <option value="Tarzan">Tarzan</option>
           </select>
+<<<<<<< HEAD
           <button class="start-btn" value="PLAY" onclick="play()">
             Start Game!
+=======
+          <button class="start-btn" value="PLAY" onclick="playAudio()">
+            Start Game!
+            <audio
+              id="audio"
+              src="https://www.chosic.com/wp-content/uploads/2021/09/Hostiles-Inbound-Epic-Battle-Music-Powerful-Orchestral.mp3"
+            ></audio>
+>>>>>>> e849b1aaacece81ce2140a26a1cde21b0bea1882
           </button>
         </header>
         <section class="game-screen">
@@ -40,6 +49,20 @@
         </section>
         <section class="actions">
           <ul>
+            <li>
+              <button
+                class="attack-button"
+                value="punch"
+                value="PLAY"
+                onclick="playAudio()"
+              >
+                Punch
+                <audio
+                  id="audio"
+                  src="https://pixabay.com/sound-effects/karate-chop-6357/"
+                ></audio>
+              </button>
+            </li>
             <li>
               <button class="attack-button" value="punch">Punch</button>
             </li>
