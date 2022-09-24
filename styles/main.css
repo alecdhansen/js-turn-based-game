@@ -25,7 +25,7 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-image: url(../images/background-sky.png);
+  background-image: url("../images/background-sky2.JPG");
   background-size: cover;
 }
 
@@ -57,10 +57,10 @@ body {
   border-radius: 30px;
   background-color: #848282;
   border: 2px solid #8d8a8a;
-
 }
 
-.on-btn > button, .on-btn > span {
+.on-btn > button,
+.on-btn > span {
   display: inline-block;
   text-align: center;
 }

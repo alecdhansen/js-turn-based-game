@@ -87,7 +87,7 @@ class Spiderman extends Hero {
       { attack: "punch", value: 10 },
       { attack: "spoon smack", value: 10 },
       { attack: "slap", value: 5 },
-      { attack: "web-shot", value: 20 },
+      { attack: "web shot", value: 20 },
       { attack: "tickle", value: 15 },
     ];
   }
@@ -151,20 +151,24 @@ class Game {
   }
 
   getActiveHero() {
-    let characterOutput =
-      selectCharacter.options[selectCharacter.selectedIndex].value;
+    let characterOutput = selectCharacter.options[selectCharacter.selectedIndex].value;
     console.log(characterOutput);
 
     if (characterOutput === "Superman") {
       this.hero = new Superman();
+      document.querySelector(".hero-img").src = "./images/superman.png";
     } else if (characterOutput === "Captain Crunch") {
       this.hero = new Captaincrunch();
+      document.querySelector(".hero-img").src = "./images/captain-crunch.png";
     } else if (characterOutput === "Elastigirl") {
       this.hero = new Elastigirl();
+      document.querySelector(".hero-img").src = "./images/elastigirl.png";
     } else if (characterOutput === "Spiderman") {
       this.hero = new Spiderman();
+      document.querySelector(".hero-img").src = "./images/spiderman.png";
     } else if (characterOutput === "Tarzan") {
       this.hero = new Tarzan();
+      document.querySelector(".hero-img").src = "./images/tarzan.png";
     }
     console.log(this.hero);
   }
@@ -178,12 +182,23 @@ class Game {
     this.villain = villainOptions[random];
 
     console.log(this.villain);
+    if (this.villain.name === "Darth Vader") {
+      document.querySelector(".villain-img").src = "./images/darth-vader.png";
+    }
+    if (this.villain.name === "The Joker") {
+      document.querySelector(".villain-img").src = "./images/the-joker.png";
+    }
+    if (this.villain.name === "Bowser") {
+      document.querySelector(".villain-img").src = "./images/bowser.png";
+    }
   }
 
   pairAttackValue(btnValue) {
-    let chosenAttack = this.hero.attacks.find(
-      ({ attack }) => attack === `${btnValue}`
-    );
+    attackBtns.forEach((attackBtn) => {
+      attackBtn.disabled = true;
+    });
+
+    let chosenAttack = this.hero.attacks.find(({ attack }) => attack === `${btnValue}`);
     // console.log(chosenAttack.value, "hero attack");
     this.villain.health -= chosenAttack.value;
     // console.log(this.villain.health, "villain health");
@@ -213,7 +228,14 @@ class Game {
       }
       game.checkGameOver();
       game.updateHeroHealth();
-    }, 3000);
+
+      setTimeout(() => {
+        attackBtns.forEach((attackBtn) => {
+          attackBtn.disabled = false;
+        });
+        actionText.value = "";
+      }, 1500);
+    }, 1500);
   }
 
   updateHeroHealth() {
@@ -338,6 +360,8 @@ onBtn.addEventListener("click", () => {
     document.querySelector(".players").style.display = "flex";
     document.querySelector(".hero-img").style.display = "block";
     document.querySelector(".villain-img").style.display = "block";
+    document.querySelector(".hero-img").src = "";
+    document.querySelector(".villain-img").src = "";
     play();
     document.getElementById("audio").muted = false;
     document.getElementById("audio").currentTime = 0;
