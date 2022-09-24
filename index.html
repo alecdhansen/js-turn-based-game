@@ -23,7 +23,7 @@
           <div class="on-btn">
             <button id="on-button"></button><span class="on-text">on/off</span>
           </div>
-          <button class="start-btn" value="PLAY" onclick="playAudio()">
+          <button class="start-btn" value="PLAY" onclick="play()">
             Start Game!
             <audio
               id="audio"
@@ -48,46 +48,12 @@
         </section>
         <section class="actions">
           <ul>
-            <li>
-              <button
-                class="attack-button"
-                value="punch"
-                value="PLAY"
-                onclick="playAudio('audio-punch')"
-              >
-                Punch
-                <audio
-                  id="audio-punch"
-                  src="audio/slap-in-the-face-101869.mp3"
-                ></audio>
-              </button>
-            </li>
-            <li>
-              <button
-                class="attack-button"
-                value="spoon-smack"
-                value="PLAY"
-                onclick="playAudio('audio-smack')"
-              >
-                spoon-smack
-                <audio id="audio-smack" src="audio/umph-47201.mp3"></audio>
-              </button>
-            </li>
-            <li>
-              <button class="attack-button" value="slap">Slap</button></li>
-            <li>
-              <button
-              class="attack-button"
-              value="punch"
-              value="PLAY"
-              onclick="playAudio('audio-shot')"
-            >
-              Web-shot
+            <li value="PLAY" onclick="play()">
+              <button class="attack-button" value="punch">Punch</button>
               <audio
-                id="audio-shot"
-                src="audio/kung-fu-punch-4-105262 (2).mp3"
+                id="audio"
+                src="https://pixabay.com/sound-effects/karate-chop-6357/"
               ></audio>
-            </button>
             </li>
             <li>
               <button

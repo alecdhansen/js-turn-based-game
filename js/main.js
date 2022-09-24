@@ -312,7 +312,6 @@ onBtn.addEventListener("click", () => {
     document.querySelector(".hero-img").style.display = "block";
     document.querySelector(".villain-img").style.display = "block";
 
-    startBtn.disabled = false;
     selectCharacter.disabled = false;
     isOn = true;
   } else if (isOn) {
@@ -340,6 +339,10 @@ onBtn.addEventListener("click", () => {
     });
     game.resetGame();
   }
+});
+
+selectCharacter.addEventListener("change", (event) => {
+  startBtn.disabled = false;
 });
 
 // music credits below
