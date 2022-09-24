@@ -87,7 +87,7 @@ class Spiderman extends Hero {
       { attack: "punch", value: 10 },
       { attack: "spoon smack", value: 10 },
       { attack: "slap", value: 5 },
-      { attack: "web-shot", value: 20 },
+      { attack: "web shot", value: 20 },
       { attack: "tickle", value: 15 },
     ];
   }
@@ -151,8 +151,7 @@ class Game {
   }
 
   getActiveHero() {
-    let characterOutput =
-      selectCharacter.options[selectCharacter.selectedIndex].value;
+    let characterOutput = selectCharacter.options[selectCharacter.selectedIndex].value;
     console.log(characterOutput);
 
     if (characterOutput === "Superman") {
@@ -181,9 +180,11 @@ class Game {
   }
 
   pairAttackValue(btnValue) {
-    let chosenAttack = this.hero.attacks.find(
-      ({ attack }) => attack === `${btnValue}`
-    );
+    attackBtns.forEach((attackBtn) => {
+      attackBtn.disabled = true;
+    });
+
+    let chosenAttack = this.hero.attacks.find(({ attack }) => attack === `${btnValue}`);
     // console.log(chosenAttack.value, "hero attack");
     this.villain.health -= chosenAttack.value;
     // console.log(this.villain.health, "villain health");
@@ -213,7 +214,13 @@ class Game {
       }
       game.checkGameOver();
       game.updateHeroHealth();
-    }, 3000);
+
+      setTimeout(() => {
+        attackBtns.forEach((attackBtn) => {
+          attackBtn.disabled = false;
+        });
+      }, 1500);
+    }, 1500);
   }
 
   updateHeroHealth() {
