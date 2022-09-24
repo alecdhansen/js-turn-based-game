@@ -287,7 +287,9 @@ function playAudio(audioFile) {
   let audio = document.getElementById(audioFile);
   audio.play();
 }
-
+function play() {
+  audio.play();
+}
 
 // music credits below
 
@@ -314,6 +316,7 @@ onBtn.addEventListener("click", () => {
     document.querySelector(".players").style.display = "flex";
     document.querySelector(".hero-img").style.display = "block";
     document.querySelector(".villain-img").style.display = "block";
+    play();
     document.getElementById("audio").muted = false;
     document.getElementById("audio").currentTime = 0;
 

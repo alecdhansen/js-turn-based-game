@@ -19,9 +19,8 @@
             <option value="Spiderman">Spiderman</option>
             <option value="Tarzan">Tarzan</option>
           </select>
-          <button class="start-btn" value="PLAY" onclick="playAudio('audio')">
           <div class="on-btn">
-            <button id="on-button" value="PLAY" onclick="play()">
+            <button id="on-button">
               <audio
                 id="audio"
                 src="https://www.chosic.com/wp-content/uploads/2021/09/Hostiles-Inbound-Epic-Battle-Music-Powerful-Orchestral.mp3"
@@ -47,25 +46,18 @@
         </section>
         <section class="actions">
           <ul>
-            <li value="PLAY" onclick="play()">
-              <button class="attack-button" value="punch">Punch</button>
-              <audio
-                id="audio"
-                src="https://pixabay.com/sound-effects/karate-chop-6357/"
-              ></audio>
+            <li><button class="attack-button" value="punch">Punch</button></li>
+            <li>
+              <button class="attack-button" value="spoon smack">
+                Spoon Smack
+              </button>
+            </li>
+            <li><button class="attack-button" value="slap">Slap</button></li>
+            <li>
+              <button class="attack-button" value="web-shot">Web Shot</button>
             </li>
             <li>
-              <button
-              class="attack-button"
-              value="punch"
-              value="PLAY"
-              onclick="playAudio('audio-joker')"
-            >
-              Tickle
-              <audio
-                id="audio-shot"
-                src="audio/joker-laugh-2-98829.mp3"
-              ></audio>
+              <button class="attack-button" value="tickle">Tickle</button>
             </li>
           </ul>
         </section>
