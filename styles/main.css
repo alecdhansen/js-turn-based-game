@@ -357,7 +357,7 @@ body {
   .hero-text,
   .villain-text {
     top: -200%;
-    width: 75px;
+    width: 80px;
     height: 30px;
     border-radius: 20px;
     font-family: "Silkscreen", Arial, Helvetica, sans-serif;
@@ -385,13 +385,13 @@ body {
   .action-text {
     display: none;
     position: absolute;
-    width: 10%;
-    height: 1px;
-    top: -500px;
-    left: 5%;
+    width: 95%;
+    height: 30px;
+    top: 45px;
+    left: 2%;
     border-radius: 20px;
     font-family: "Silkscreen", Arial, Helvetica, sans-serif;
-    font-size: 18px;
+    font-size: 10px;
     text-align: center;
     color: #f5eb60;
     background-color: rgba(0, 0, 0, 0.8);
