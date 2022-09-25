@@ -302,8 +302,8 @@ body {
 /* -----MEDIA-QUERIES----- */
 @media (max-width: 505px) {
   .game-pad {
-    width: 250px;
-    height: 250px;
+    width: 300px;
+    height: 300px;
     background-color: black;
     border-radius: 40px;
     border: 3px solid #848282;
@@ -315,10 +315,11 @@ body {
   .on-btn {
     padding: 4px 1px;
     border-radius: 20px;
+    width: 30%;
   }
   .on-btn > button {
-    height: 12px;
-    width: 12px;
+    height: 16px;
+    width: 16px;
     box-shadow: 0 2px #999;
   }
   .on-btn > button:active {
@@ -344,12 +345,12 @@ body {
     transform: translateY(2px);
   }
   .game-screen {
-    width: 95%;
-    height: 200px;
+    width: 99%;
+    height: 250px;
   }
   .game-screen > .screen-img {
     width: 100%;
-    height: 200px;
+    height: 225px;
     border-radius: 30px;
     border: 2px solid #000;
   }
@@ -377,8 +378,8 @@ body {
   }
   .vs-logo {
     display: none;
-    height: 15px;
-    top: 5px;
+    height: 20px;
+    top: 16px;
   }
 
   .action-text {
@@ -402,8 +403,8 @@ body {
     height: 20px;
     background: linear-gradient(45deg, #18360b, #73fa34);
     position: absolute;
-    top: -100px;
-    left: -10px;
+    top: -95px;
+    left: 10px;
     border-radius: 10px;
     z-index: 20;
     border: 3px rgba(0, 0, 0, 0.8);
@@ -417,7 +418,7 @@ body {
     background: linear-gradient(45deg, #fd2318, #420a07);
     position: absolute;
     top: -70px;
-    right: -10px;
+    right: 10px;
     border-radius: 10px;
     z-index: 20;
     border: 3px rgba(0, 0, 0, 0.8);
@@ -429,8 +430,8 @@ body {
     height: 20px;
     background: rgba(0, 0, 0, 0.8);
     position: absolute;
-    top: -100px;
-    right: -10px;
+    top: -95px;
+    right: 10px;
     border-radius: 10px;
     z-index: 10;
     border-color: rgba(118, 118, 118, 0.3);
@@ -445,7 +446,7 @@ body {
     background: rgba(0, 0, 0, 0.8);
     position: absolute;
     top: -70px;
-    right: -10px;
+    right: 10px;
     border-radius: 10px;
     z-index: 10;
     border-color: rgba(118, 118, 118, 0.3);
@@ -453,7 +454,7 @@ body {
     border-style: inset;
   }
   .players {
-    top: 75px;
+    top: 95px;
     width: 100%;
     padding: 30px 1px;
   }
@@ -465,6 +466,7 @@ body {
   }
   .actions {
     width: 100%;
+    margin-top: 20px;
   }
   .actions > ul > li {
     width: 500px;
