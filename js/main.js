@@ -323,6 +323,11 @@
     }
   
     resetGame() {
+      var list = document.getElementsByClassName('actions3');
+        for (var k = list.length - 1; k >= 0; k--) {
+          var item = list[k];
+          item.parentNode.removeChild(item);
+        }
       heroText.value = "";
       villainText.value = "";
       this.villain.health = 100;
@@ -405,6 +410,8 @@
   
       selectCharacter.disabled = false;
       isOn = true;
+      
+      console.log('game on');
     } else if (isOn) {
       document.querySelector("#on-button").style.backgroundColor = "#e34e45";
       document.querySelector("#on-button").style.borderColor = "#a43832";
@@ -430,6 +437,7 @@
         attackBtn.disabled = true;
       });
       game.resetGame();
+      console.log('game off');
     }
   });
   
