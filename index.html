@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles/main.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js" integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title>Turn Based Game</title>
   </head>
   <body>
@@ -40,65 +42,69 @@
           <div class="villainPower-shadow"></div>
           <input type="text" class="action-text" disabled />
           <div class="players">
-            <img class="hero-img" src="" alt="" />
-            <img class="villain-img" src="" alt="" />
+            <img class="hero-img" src="./images/captain-crunch.png" alt="" />
+            <img class="villain-img" src="./images/darth-vader.png" alt="" />
           </div>
         </section>
-        <section class="actions">
+        <section>
+        <audio class="soundbite" id="bite" src="audio/splash-by-blaukreuz-6261.mp3">
+
+        </audio>
+        </section>
+        
+        <section class="actions" id="action-buttons" >
           <ul>
-            <li>
-              <button
-                class="attack-button"
-                value="punch"
-                value="PLAY">punch 
-                <audio
-                  id="audio-punch"
-                  src="audio/umph-47201.mp3"></audio>
-              </button>
-            </li>
-            <li>
-              <button
-                class="attack-button"
-                value="spoon smack"
-                value="PLAY">spoon smack
-                <audio
-                  id="audio-smack"
-                  src="audio/hit-sound-effect-12445.mp3"></audio>
-              </button>
-            </li>
-            <li>
-              <button
+             <li></li> 
+            <li class="actions3">
+              <button 
               class="attack-button"
-              value="slap"
-              value="PLAY">slap
+               value="">
               <audio
-                id="audio-slap"
-                src="audio/slap-in-the-face-101869.mp3"></audio>
-            </button>
-            </li>
-            <li>
-              <button
-                class="attack-button"
-                value="web shot"
-                value="PLAY">web-shot
-                <audio
-                  id="audio-shot"
-                  src="audio/splash-by-blaukreuz-6261.mp3"></audio>
+              id=""
+              src="">
+            </audio>
               </button>
             </li>
-            </li>
-            <li>
-              <button
-                class="attack-button"
-                value="tickle"
-                value="PLAY">tickle
-                <audio
-                  id="audio-joker"
-                  src="audio/joker-laugh-2-98829.mp3"></audio>
-              </button>
-            </li>
+            
           </ul>
         </section>
+        <script id="template" type="text/x-handlebars-template">
+        <section class="actions">
+          <ul>
+          {{#each context}} 
+          <li class="actions3">
+          <button class="attack-button heroes" value={{attack}} id="at-{{sound}}" sound="{{sound}}">
+            <audio
+                sound2 ="{{sound}}"
+                src="./audio/joker-laugh-2-98829.mp3"
+                ></audio>
+            {{caption}}
+          </button>
+           
+            </li>
+          {{/each}}
+        </ul>
+        </section>
+        </script>
+
+        <script id="sound-template" type="text/x-handlebars-template">
+         
+          <audio class="soundbite" id="{{soundname}}" src="{{src}}">
+
+          </audio>
+        
+        </script>
+        <section>
+        <audio class="soundbite" id="bite" src="audio/splash-by-blaukreuz-6261.mp3"></audio>
+          <audio class="soundbite" id="audiotickle" src="audio/joker-laugh-2-98829.mp3"></audio>
+          <audio class="soundbite" id="audiowebshot" src="./audio/splash-by-blaukreuz-6261.mp3"></audio>
+          <audio class="soundbite" id="audioslap" src="./audio/slap-in-the-face-101869.mp3"></audio>
+          <audio class="soundbite" id="audiosmack" src="./audio/hit-sound-effect-12445.mp3"></audio>
+          <audio class="soundbite" id="audiopunch" src="./audio/umph-47201.mp3"> </audio>
+        
+      </section>
+        
+
       </article>
     </main>
     <script src="./js/main.js"></script>
